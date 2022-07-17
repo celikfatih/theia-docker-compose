@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  theia:
+    image: theia
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${WORKING_DIR}:/home/project:cached
+    ports:
+      - ${PORT}:3000
+    container_name: theia-ide
